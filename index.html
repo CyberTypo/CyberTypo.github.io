@@ -47,6 +47,12 @@
         li {
             margin-bottom: 8px;
         }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -56,7 +62,7 @@
         }
         .highlight {
             background-color: #e8f5e9;
-            padding: 10px;
+            padding: 15px;
             border-left: 4px solid #2e7d32;
             margin: 15px 0;
             border-radius: 4px;
@@ -67,71 +73,87 @@
 
 <div class="container">
     <h1>KEBIJAKAN PRIVASI APLIKASI DEKGAM</h1>
-    <div class="subtitle">Data Ekosistem Gampong (Digitalisasi Administrasi & Informasi)</div>
+    <div class="subtitle">(Data Ekosistem Gampong Administrasi Maju)</div>
 
-    <p>Kebijakan Privasi ini dibuat untuk membantu Anda memahami bagaimana aplikasi DEKGAM mengumpulkan, menggunakan, mengelola, dan melindungi data serta hak akses Anda selaku pengguna layanan digital ekosistem desa.</p>
+    <p>Kebijakan Privasi ini dibuat untuk membantu Anda memahami bagaimana aplikasi DEKGAM mengumpulkan, menggunakan, mengelola, memproses, dan melindungi data serta hak akses Anda selaku pengguna layanan digital ekosistem gampong.</p>
 
     <div class="highlight">
-        <strong>Ruang Lingkup Wilayah Layanan:</strong><br>
-        Saat ini, aplikasi DEKGAM diperuntukkan secara khusus untuk lingkungan internal <strong>Gampong Keude Keumuneng, Kecamatan Idi Tunong, Kabupaten Aceh Timur</strong>. Namun, aplikasi ini dirancang untuk terus dikembangkan secara modular guna melayani cakupan wilayah hukum administrasi gampong/desa yang lebih luas di masa mendatang.
+        <strong>Ruang Lingkup Wilayah & Pengembangan Layanan:</strong><br>
+        Saat ini, aplikasi DEKGAM diperuntukkan secara khusus untuk lingkungan internal <strong>Gampong Keude Keumuneng, Kecamatan Idi Tunong, Kabupaten Aceh Timur</strong>. Namun, aplikasi ini dirancang secara modular dan skalabel guna dikembangkan serta melayani cakupan wilayah hukum administrasi gampong/desa yang lebih luas di masa mendatang.
     </div>
 
     <h2>1. Data Pribadi yang Kami Kumpulkan</h2>
     <p>Untuk mendukung kelancaran pelayanan administrasi surat-menyurat dan fitur interaksi desa, sistem memerlukan beberapa identitas resmi Anda, meliputi:</p>
     <ul>
-        <li><strong>Informasi Identitas Utama:</strong> Nama Lengkap, Nomor Induk Kependudukan (NIK), dan Nomor Kartu Keluarga (KK).</li>
-        <li><strong>Informasi Kontak:</strong> Nomor HP/WhatsApp aktif dan alamat Email.</li>
+        <li><strong>Informasi Identitas Utama:</strong> Nama Lengkap (sesuai KTP), Nomor Induk Kependudukan (NIK), dan Nomor Kartu Keluarga (KK).</li>
+        <li><strong>Informasi Kontak Aktif:</strong> Nomor HP/WhatsApp aktif dan alamat Email.</li>
         <li><strong>Data Profil Pendukung:</strong> Tempat/Tanggal Lahir, Agama, Jenis Kelamin, Pekerjaan, Status Perkawinan, dan Dusun tempat tinggal.</li>
-        <li><strong>Data Geografis (Lokasi):</strong> Titik koordinat GPS yang ditarik saat pengisian formulir khusus (seperti validasi lokasi Surat Keterangan Kepemilikan Ternak atau pemetaan aset).</li>
     </ul>
 
-    <h2>2. Akses Fitur Perangkat (Kamera, Galeri, & Penyimpanan)</h2>
-    <p>Aplikasi DEKGAM meminta izin akses ke beberapa fitur fisik pada perangkat handphone Anda demi mendukung fitur operasional berikut:</p>
+    <h2>2. Data Geospasial dan Pelacakan Lokasi (Geolocator)</h2>
+    <p>Aplikasi DEKGAM menggunakan infrastruktur penentu lokasi perangkat (Geolocator API) untuk merekam koordinat geografis pengguna:</p>
     <ul>
-        <li><strong>Akses Kamera:</strong> Digunakan untuk mengambil foto dokumen pendukung secara langsung, melakukan pemindaian (scan) QR Code printer desa saat mencetak surat mandiri, serta mengambil dokumentasi foto kegiatan desa.</li>
+        <li>Sistem mengumpulkan data lokasi perkiraan (<em>Approximate Location</em>) dan lokasi akurat (<em>Precise Location</em>) Anda.</li>
+        <li>Data lokasi ini hanya diambil pada saat pengisian formulir khusus kependudukan, seperti validasi letak fisik pada pengajuan <strong>Surat Keterangan Kepemilikan Ternak</strong> atau pemetaan aset gampong guna mencegah pemalsuan klaim di dalam wilayah desa.</li>
+    </ul>
+
+    <h2>3. Akses Fitur Perangkat Keras (Hardware Accessibility)</h2>
+    <p>Aplikasi DEKGAM meminta izin operasional ke beberapa fitur fisik pada perangkat handphone Anda demi mendukung fungsionalitas berikut:</p>
+    <ul>
+        <li><strong>Akses Kamera (Foto Dokumen):</strong> Digunakan untuk mengambil gambar dokumen pendukung secara langsung, melakukan pemindaian (scan) QR Code printer desa saat mencetak surat mandiri, serta dokumentasi kegiatan desa.</li>
+        <li><strong>Fitur Beta AI OCR (Text Recognition):</strong> Kamera terintegrasi dengan teknologi Google ML Kit dan OCR Space API dalam status uji coba (Beta). Gambar KTP yang Anda foto akan diproses untuk mengekstrak data teks identitas secara otomatis ke dalam formulir pendaftaran guna mempercepat pengisian data.</li>
         <li><strong>Akses Galeri & Media Gambar:</strong> Digunakan saat Anda ingin memilih atau mengunggah berkas gambar/sertifikat yang sudah tersimpan di dalam handphone Anda ke dalam sistem pengajuan dokumen gampong.</li>
-        <li><strong>Penyimpanan Eksternal (Memory HP & Cloud):</strong> Foto kegiatan desa yang diambil oleh warga dapat disimpan secara lokal ke dalam memori handphone pengguna, atau opsional diunggah ke media penyimpanan awan (Google Drive Developer) yang dikelola oleh pihak pengembang gampong sebagai arsip dokumentasi resmi.</li>
+        <li><strong>Penyimpanan Lokal Perangkat (Shared Preferences):</strong> Aplikasi menggunakan memori lokal handphone untuk menyimpan token sesi masuk (<em>login session</em>) agar Anda tidak perlu melakukan autentikasi ulang setiap kali membuka aplikasi, serta menyimpan berkas foto kegiatan desa pilihan Anda.</li>
     </ul>
 
-    <h2>3. Fitur Interaksi Sosial (Chat Global & Mading Desa)</h2>
-    <p>Aplikasi ini menyediakan wadah komunikasi terbuka antarkomunitas warga:</p>
+    <h2>4. Fitur Interaksi Sosial (Chat Global & Mading Desa)</h2>
+    <p>Aplikasi ini menyediakan wadah komunikasi terbuka antarkomunitas warga gampong terdaftar:</p>
     <ul>
-        <li><strong>Fitur Chat Global:</strong> Setiap pesan teks atau media yang Anda kirimkan di dalam ruang obrolan global dapat dilihat oleh pengguna aplikasi lainnya. Kami mengimbau warga untuk tidak membagikan informasi rahasia atau data pribadi sensitif di dalam ruang obrolan publik ini.</li>
-        <li><strong>Mading Desa (Majalah Dinding):</strong> Informasi, pengumuman, atau berita kegiatan yang diunggah ke Mading Desa bersifat publik untuk seluruh warga gampong. Sistem mencatat ID akun pengunggah demi akuntabilitas konten dan menghindari penyebaran berita palsu (hoax).</li>
+        <li><strong>Fitur Chat Global:</strong> Setiap pesan teks atau media yang Anda kirimkan di dalam ruang obrolan publik dapat dilihat oleh pengguna aplikasi lainnya. Kami mengimbau warga untuk tidak membagikan informasi rahasia atau data pribadi sensitif di dalam ruang obrolan publik ini.</li>
+        <li><strong>Mading Desa (Majalah Dinding Digital):</strong> Informasi, pengumuman, atau berita kegiatan yang diunggah ke Mading Desa bersifat publik untuk seluruh warga. Sistem mencatat identitas akun (<em>User ID</em>) pengunggah demi menjaga akuntabilitas konten dan menghindari penyebaran berita palsu (hoax) atau ujaran kebencian.</li>
     </ul>
 
-    <h2>4. Manajemen Pengguna Berbasis Peran (Role-Based Access Control)</h2>
-    <p>Aplikasi DEKGAM menerapkan sistem keamanan berlapis berdasarkan jenis akun pengguna:</p>
+    <h2>5. Keamanan Akun, Otentikasi, dan Perlindungan Server</h2>
+    <p>Kami berkomitmen penuh menerapkan standar keamanan tinggi untuk melindungi privasi data warga:</p>
     <ul>
-        <li>Sistem membagi tingkat akses menjadi beberapa peran resmi dengan hak kelola yang berbeda, yaitu: <strong>Warga, Operator Surat, Keuchik (Kepala Desa), dan Developer (Pengembang)</strong>.</li>
-        <li>Data sensitif warga (seperti NIK dan KK) diisolasi secara ketat dan hanya dapat diverifikasi oleh Operator Surat dan Keuchik yang sah demi keperluan hukum administrasi. Pembatasan ini diatur langsung melalui aturan keamanan server (<em>Firestore Security Rules</em>).</li>
-        <li><strong>Kendali Pendaftaran:</strong> Pihak Admin/Operator memiliki otoritas penuh untuk mengaktifkan atau menonaktifkan sistem pendaftaran mandiri warga kapan saja melalui panel kendali (system switch) demi menjaga validitas data penduduk gampong.</li>
+        <li><strong>Metode Akses & Sandi Pertama:</strong> Pendaftaran akun divalidasi menggunakan NIK penduduk dengan kata sandi bawaan awal berupa Tanggal Lahir (DOB) pendaftar. Pengguna <strong>diwajibkan untuk mengubah kata sandi bawaan</strong> tersebut pada saat login pertama kali demi mengamankan privasi akun pribadi.</li>
+        <li><strong>Enkripsi Dokumen Database:</strong> Di dalam server peladen, dokumen akun Anda dikunci menggunakan <em>Firebase User ID (UID)</em> acak yang terenkripsi, bukan menggunakan nomor NIK mentah Anda sebagai ID dokumen utama.</li>
+        <li><strong>Perlindungan Server (Firebase App Check):</strong> Lalu lintas data database dilindungi oleh infrastruktur App Check guna memastikan hanya aplikasi DEKGAM resmi dan terverifikasi yang dapat mengakses peladen, serta memblokir akses ilegal atau serangan siber dari luar.</li>
     </ul>
 
-    <h2>5. Keamanan Akun dan Otentikasi</h2>
+    <h2>6. Manajemen Pengguna Berbasis Peran (Role-Based Access Control)</h2>
+    <p>Akses terhadap basis data internal diisolasi secara ketat berdasarkan klasifikasi peran akun pengguna (<em>Permission Checks</em>):</p>
     <ul>
-        <li><strong>Metode Akses Aman:</strong> Pendaftaran akun divalidasi menggunakan NIK penduduk, namun di dalam database, dokumen akun Anda dikunci menggunakan <em>Firebase User ID (UID)</em> acak, bukan menggunakan NIK mentah Anda.</li>
-        <li><strong>Sandi Pertama:</strong> Kata sandi bawaan awal diatur menggunakan Tanggal Lahir (DOB) pendaftar. Pengguna <strong>diwajibkan untuk mengubah kata sandi bawaan</strong> tersebut pada saat login pertama kali demi mengamankan privasi akun pribadi.</li>
+        <li>Sistem membagi tingkat akses menjadi beberapa peran resmi dengan hak kelola yang berbeda, yaitu: <strong>Warga, Operator Surat, Keuchik (Kepala Desa), dan Developer (Pengembang Proyek)</strong>.</li>
+        <li>Aturan keamanan server (<em>Firestore Security Rules</em>) memastikan warga tidak dapat mengintip atau mengubah data milik warga lainnya. Data pribadi sensitif hanya dapat diverifikasi oleh Operator Surat dan Keuchik yang sah demi keperluan administrasi desa.</li>
     </ul>
 
-    <h2>6. Sistem Penghapusan Data Otomatis (Trash System)</h2>
-    <p>Aplikasi DEKGAM menerapkan kebijakan siklus data digital yang transparan (Soft Delete):</p>
+    <h2>7. Kendali Aktivitas Registrasi Oleh Admin</h2>
+    <p>Pihak Administrator/Operator Gampong memiliki otoritas penuh melalui panel kontrol pusat untuk mengaktifkan atau menonaktifkan sistem pendaftaran mandiri warga kapan saja. Jika status pendaftaran dinonaktifkan, penduduk baru harus melapor langsung ke kantor gampong guna menjaga validitas data kependudukan riil di lapangan.</p>
+
+    <h2>8. Siklus Hidup Data & Sistem Sampah Digital (Trash System)</h2>
+    <p>Aplikasi DEKGAM menerapkan kebijakan pengelolaan hapus data sementara yang transparan (Soft Delete):</p>
     <ul>
-        <li>Setiap draf pengajuan surat administrasi yang dihapus oleh warga atau operator tidak langsung hilang lenyap seketika, melainkan diubah statusnya menjadi <code>"deleted"</code> di server.</li>
-        <li>Data berstatus hapus sementara tersebut akan disimpan di folder Sampah Digital selama <strong>7 (tujuh) hari</strong> untuk mengantisipasi kesalahan hapus tidak sengaja.</li>
-        <li>Setelah batas waktu 7 hari terlampaui, sistem otomatis (<em>Cloud Function</em>) akan menghapus seluruh data dan berkas tersebut dari server secara permanen.</li>
+        <li>Every pengajuan surat administrasi yang dihapus oleh warga atau operator tidak langsung hilang permanen, melainkan diubah statusnya menjadi <code>"deleted"</code> di server.</li>
+        <li>Data berstatus hapus sementara tersebut akan disimpan di folder Sampah Digital gampong selama <strong>7 (tujuh) hari</strong> untuk mengantisipasi kesalahan hapus tidak sengaja.</li>
+        <li>Setelah batas waktu 7 hari terlampaui, skrip otomatis peladen (<em>Firebase Cloud Functions</em>) akan mengeksekusi penghapusan seluruh data dan berkas tersebut dari server secara permanen.</li>
     </ul>
 
-    <h2>7. Integrasi Layanan Pihak Ketiga</h2>
-    <p>Dalam menjalankan sistem, aplikasi ini menggunakan infrastruktur eksternal resmi dari penyedia layanan pihak ketiga yang aman:</p>
+    <h2>9. Integrasi Layanan Pihak Ketiga dan Analitika</h2>
+    <p>Dalam mengoptimalkan performa aplikasi, DEKGAM mengintegrasikan beberapa infrastruktur eksternal resmi milik pihak ketiga:</p>
     <ul>
-        <li><strong>Google Firebase:</strong> Untuk mengelola proses masuk akun (Auth), penyimpanan data (Firestore), dokumen (Storage), server otomatis (Functions), dan pesan notifikasi gampong (FCM).</li>
-        <li><strong>Google Maps API:</strong> Untuk memetakan titik koordinat lokasi geospasial aset penduduk.</li>
-        <li><strong>Google Apps Script & Google Drive:</strong> Untuk menjahit data formulir menjadi berkas PDF surat resmi gampong secara otomatis.</li>
+        <li><strong>Google Firebase (Core, Auth, Firestore, Storage, Functions, Messaging):</strong> Untuk manajemen akun, database cloud, penyimpanan berkas surat, otomatisasi server, dan notifikasi pengajuan surat waktu-nyata melalui Firebase Cloud Messaging (FCM).</li>
+        <li><strong>Firebase Analytics:</strong> Mengumpulkan data statistik perilaku penggunaan aplikasi secara anonim (halaman yang paling sering dikunjungi, durasi pemakaian, stabilitas sistem) demi bahan evaluasi dan peningkatan performa aplikasi ke depan.</li>
+        <li><strong>Google Maps API:</strong> Untuk pemrosesan dan pemetaan data geospasial lokasi aset penduduk.</li>
+        <li><strong>Google Apps Script & Google Drive:</strong> Digunakan sebagai mesin eksternal untuk menjahit data inputan formulir menjadi berkas cetak PDF surat resmi secara otomatis (tanpa nomor dan tanda tangan awal).</li>
     </ul>
 
-    <h2>8. Persetujuan Anda</h2>
-    <p>Dengan melakukan registrasi dan menggunakan layanan aplikasi DEKGAM, Anda menyatakan telah membaca, memahami, dan memberikan izin penuh kepada perangkat gampong untuk mengolah data tersebut sesuai koridor pelayanan publik administrasi negara yang berlaku.</p>
+    <h2>10. Hak Pengguna dan Transparansi Hukum</h2>
+    <p>Sebagai pengguna, Anda berhak mengubah data profil secara mandiri, menonaktifkan toggle "Gunakan Data Profil Saya" jika ingin mengisi data orang lain, serta membatalkan draf surat kapan saja sebelum diverifikasi operator.</p>
+    <p>Pemerintah Gampong Keude Keumuneng berkomitmen penuh <strong>TIDAK AKAN PERNAH</strong> menjual, menyewakan, atau membocorkan data pribadi warga kepada pihak pengiklan swasta, broker data, atau pihak ketiga mana pun di luar kepentingan koridor hukum administrasi negara Pemerintah Kabupaten Aceh Timur.</p>
+
+    <h2>11. Persetujuan Anda</h2>
+    <p>Dengan melakukan registrasi akun dan menggunakan layanan aplikasi DEKGAM, Anda menyatakan telah membaca, memahami, dan memberikan izin penuh kepada perangkat gampong untuk mengolah data tersebut sesuai koridor Kebijakan Privasi ini demi kelancaran pelayanan publik kependudukan.</p>
 
     <div class="footer">
         Terakhir diperbarui: Mei 2026
